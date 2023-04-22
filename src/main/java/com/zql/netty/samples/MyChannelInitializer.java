@@ -4,6 +4,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
 
 import java.nio.charset.Charset;
 
@@ -27,6 +28,8 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
         channel.pipeline().addLast(new LineBasedFrameDecoder(1024));
         //解码转String，注意字符串的编码格式
         channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
+        //String编码器
+        channel.pipeline().addLast(new StringEncoder(Charset.forName("GBK")));
 
         //在管道中添加接受数据的方法
         channel.pipeline().addLast(new MyServerHandler());
