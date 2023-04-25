@@ -27,16 +27,16 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
          *
          * FixedLengthFrameDecoder 基于字符串长度
          */
-//        channel.pipeline().addLast(new LineBasedFrameDecoder(1024));
+        channel.pipeline().addLast(new LineBasedFrameDecoder(1024));
 
-//        //解码转String，注意字符串的编码格式
-//        channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
-//        //String编码器
-//        channel.pipeline().addLast(new StringEncoder(Charset.forName("GBK")));
+        //解码转String，注意字符串的编码格式
+        channel.pipeline().addLast(new StringDecoder(Charset.forName("GBK")));
+        //String编码器
+        channel.pipeline().addLast(new StringEncoder(Charset.forName("GBK")));
 
         //测试自定义编码器和解码器
-        channel.pipeline().addLast(new MyDecoder());
-        channel.pipeline().addLast(new MyEncoder());
+//        channel.pipeline().addLast(new MyDecoder());
+//        channel.pipeline().addLast(new MyEncoder());
 
         //在管道中添加接受数据的方法
         channel.pipeline().addLast(new MyServerHandler());

@@ -32,7 +32,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
 //        ctx.writeAndFlush(buf);
 
         //添加stringDecoder之后就不需要再手动处理发出的数据
-        ctx.writeAndFlush(str);
+//        ctx.writeAndFlush(str);
     }
 
     /**
@@ -59,7 +59,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
 
         //通知客户端链消息发送成功
         String str = "服务端收到：" + new Date() + " " + msg + "\r\n";
-        ctx.writeAndFlush(str);
+//        ctx.writeAndFlush(str);
 
         //向通信组发消息
 //        ChannelHandler.channelGroup.writeAndFlush(str);

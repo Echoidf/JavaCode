@@ -8,10 +8,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * 在消息管道中处理和拦截入站事件
+ * ChannelHandler和ChannelContext配合使用
  * @author：zql
- * @date: 2023/4/22
+ * @date: 2023/4/25
  */
-public class MyClientHandler extends ChannelInboundHandlerAdapter {
+public class MyInMsgHandler extends ChannelInboundHandlerAdapter {
     /**
      * 当客户端主动链接服务端的链接后，这个通道就是活跃的了。也就是客户端与服务端建立了通信通道并且可以传输数据
      */
@@ -53,5 +55,4 @@ public class MyClientHandler extends ChannelInboundHandlerAdapter {
         ctx.close();
         System.out.println("异常信息：\r\n" + cause.getMessage());
     }
-
 }

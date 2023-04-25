@@ -24,7 +24,7 @@ public class NettyClient {
             b.channel(NioSocketChannel.class);
             //设置自动读取数据，而不需要显示地调用read方法，对于长连接场景比较适合
             b.option(ChannelOption.AUTO_READ, true);
-            b.handler(new ClientInitializer());
+            b.handler(new MyChannelInitializer());
             ChannelFuture f = b.connect(inetHost, inetPort).sync();
             System.out.println("zql-netty-demo client start done.");
             f.channel().closeFuture().sync();
