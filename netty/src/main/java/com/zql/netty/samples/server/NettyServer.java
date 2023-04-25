@@ -1,4 +1,4 @@
-package com.zql.netty.samples;
+package com.zql.netty.samples.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -17,7 +17,6 @@ public class NettyServer {
 
     private void bing(int port){
         //配置服务端的NIO线程组
-
         //parentGroup用于接受传入的链接请求
         NioEventLoopGroup parentGroup = new NioEventLoopGroup();
         //childGroup用于处理已接受链接的流量

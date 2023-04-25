@@ -1,4 +1,4 @@
-package com.zql.netty.samples;
+package com.zql.netty.samples.server;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -16,7 +16,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //当有客户端连接时添加到channelGroup通信组
-        ChannelHandler.channelGroup.add(ctx.channel());
+//        ChannelHandler.channelGroup.add(ctx.channel());
 
         SocketChannel channel = (SocketChannel)ctx.channel();
         System.out.println("链接报告开始");
@@ -42,7 +42,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
     public void channelInactive(ChannelHandlerContext ctx) {
         System.out.println("客户端断开链接" + ctx.channel().localAddress().toString());
         //当有客户端退出时，从channelGroup通信组中移除
-        ChannelHandler.channelGroup.remove(ctx.channel());
+//        ChannelHandler.channelGroup.remove(ctx.channel());
     }
 
     @Override
@@ -59,10 +59,10 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
 
         //通知客户端链消息发送成功
         String str = "服务端收到：" + new Date() + " " + msg + "\r\n";
-//        ctx.writeAndFlush(str);
+        ctx.writeAndFlush(str);
 
         //向通信组发消息
-        ChannelHandler.channelGroup.writeAndFlush(str);
+//        ChannelHandler.channelGroup.writeAndFlush(str);
     }
 
     /**

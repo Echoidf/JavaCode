@@ -1,4 +1,4 @@
-package com.zql.netty.samples;
+package com.zql.netty.samples.server;
 
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
