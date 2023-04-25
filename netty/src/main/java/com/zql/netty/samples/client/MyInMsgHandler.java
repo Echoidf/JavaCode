@@ -28,6 +28,7 @@ public class MyInMsgHandler extends ChannelInboundHandlerAdapter {
         //通知客户端链接建立成功
         String str = "通知服务端链接建立成功" + " " + new Date() + " " + channel.localAddress().getHostString() + "\r\n";
         ctx.writeAndFlush(str);
+
     }
 
     /**
