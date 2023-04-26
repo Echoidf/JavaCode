@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import javax.annotation.Resource;
 import java.net.InetSocketAddress;
 
 /**
@@ -25,7 +26,7 @@ public class Application implements CommandLineRunner {
     @Value("${netty.port}")
     private int port;
 
-    @Autowired
+    @Resource
     private NettyServer nettyServer;
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
