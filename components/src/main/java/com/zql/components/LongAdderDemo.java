@@ -18,6 +18,7 @@ public class LongAdderDemo {
         ThreadFactory factory = new CustomizableThreadFactory("ThreadName=");
         RejectedExecutionHandler handler = new ThreadPoolExecutor.CallerRunsPolicy();
 
+        //创建线程池
         ThreadPoolExecutor threadPoolExecutor =
                 new ThreadPoolExecutor(corePollSize, maxPollSize, keepAliveTime, TimeUnit.SECONDS, blockingQueue, factory, handler);
 
