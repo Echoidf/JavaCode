@@ -11,6 +11,7 @@
     <modules>
         <module>springboot</module>
         <module>netty</module>
+        <module>components</module>
     </modules>
 
     <properties>

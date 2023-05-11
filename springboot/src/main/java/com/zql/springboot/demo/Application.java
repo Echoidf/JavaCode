@@ -2,7 +2,6 @@ package com.zql.springboot.demo;
 
 import com.zql.springboot.demo.netty.server.NettyServer;
 import io.netty.channel.ChannelFuture;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

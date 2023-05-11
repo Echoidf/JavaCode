@@ -6,9 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="components" />
         <module name="springboot" />
         <module name="netty" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gRpc" target="1.8" />
+      <module name="grpc-api" target="1.8" />
+      <module name="grpc-client" target="1.8" />
+      <module name="grpc-server" target="1.8" />
+      <module name="gRpcServer" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
