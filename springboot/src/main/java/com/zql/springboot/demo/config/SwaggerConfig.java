@@ -44,7 +44,7 @@ public class SwaggerConfig {
                     .apiInfo(apiInfo()).enable(true)
                     .select()
                     //apis： 添加swagger接口提取范围
-                    .apis(RequestHandlerSelectors.basePackage("com.zql.springboot.demo.controller"))
+                    .apis(RequestHandlerSelectors.basePackage("com.zql.springboot.demo"))
                     .paths(PathSelectors.any())
                     .build();
             return docket;

@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.annotation.Resource;
 import java.net.InetSocketAddress;
@@ -16,7 +17,6 @@ import java.net.InetSocketAddress;
  * @date: 2023/4/25
  */
 @SpringBootApplication
-@ComponentScan("com.zql.springboot.demo.netty")
 public class Application implements CommandLineRunner {
 
 
